@@ -9,28 +9,28 @@ const SidebarParent = styled.div`
 `;
 
 const SidebarItem = styled.div`
-  padding: 16px 24px;
-  transition: all 0.25s ease-in-out;
-  background: ${props => props.active ? "#b15b00" : ""};
-  margin: 4px 12px;
-  border-radius: 4px;
+padding: 2px 3px;
+transition: all 0.25s ease-in-out;
+background: ${props => props.active ? "#b15b00" : ""};
+margin: 1px 4px;
+border-radius: 4px;
 
-  p {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  &:hover {
-    cursor:pointer;
-  }
-  
-  &:hover:not(:first-child) {
-    background: #c34a36;
-  }
+p {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+&:hover {
+  cursor:pointer;
+}
+
+&:hover:not(:first-child) {
+  background: #c34a36;
+}
 `;
 
-function Sidebar({ defaultActive }) {
+function Sidebar(props, { defaultActive }) {
   const [activeIndex, setActiveIndex] = useState(defaultActive || 1);
 
   return(

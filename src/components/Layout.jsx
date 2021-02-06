@@ -1,18 +1,19 @@
 import React from 'react';
 import Routes from '../routes';
+import Nav from './Nav';
 import Sidebar from './Sidebar';
 
 function Layout(props) {
   return(
-    <div>
-      <p>
-        This is the main window, (Layout()).
-      </p>
-      <div>
+    <>
+      <div style={{display: "flex"}}>
         <Sidebar />
-        <Routes />
+        <div style={{maxWidth: "800px"}}>
+          <Nav />
+          <Routes />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -10,7 +10,7 @@ function Layout(props) {
         <Sidebar />
         <div style={{maxWidth: "800px"}}>
           <Nav />
-          <Routes />
+          {props.children}
         </div>
       </div>
     </>

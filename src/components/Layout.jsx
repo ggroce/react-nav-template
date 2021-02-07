@@ -1,7 +1,13 @@
 import React from 'react';
-import Routes from '../routes';
-import Nav from './Nav';
+import styled from 'styled-components';
+import Header from './Header';
 import Sidebar from './Sidebar';
+
+const SelectedPageParent = styled.div`
+  background: #B5CCB8;
+  height: 100vh;
+  width: 100vw;
+`;
 
 function Layout(props) {
   return(
@@ -9,8 +15,10 @@ function Layout(props) {
       <div style={{display: "flex"}}>
         <Sidebar />
         <div style={{maxWidth: "800px"}}>
-          <Nav />
-          {props.children}
+          <Header />
+          <SelectedPageParent>
+            {props.children}
+          </SelectedPageParent>
         </div>
       </div>
     </>

@@ -1,4 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const DashboardParent = styled.div`
+  background: #B5CCB8;
+  height: 100vh;
+  width: 100vw;
+`;
 
 function Dashboard(props) {
   return(

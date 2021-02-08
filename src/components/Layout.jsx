@@ -5,23 +5,19 @@ import Sidebar from './Sidebar';
 
 const SelectedPageParent = styled.div`
   background: #B5CCB8;
-  height: 100vh;
-  width: 100vw;
 `;
 
 function Layout(props) {
   return(
-    <>
+    <div>
       <div style={{display: "flex"}}>
-        <Sidebar />
-        <div style={{maxWidth: "800px"}}>
+        <Sidebar history={props.history}/>
+        <div style={{flexGrow: "1"}}>
           <Header />
-          <SelectedPageParent>
             {props.children}
-          </SelectedPageParent>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -4,11 +4,20 @@ import styled from 'styled-components';
 import SidebarItems from './SidebarItems';
 
 const SidebarParent = styled.div`
-  position: sticky;
   background: #BBA79C;
-  top: 0;
-  width: 200px;
-  height: 100vh;
+
+  a {
+    text-decoration: none;
+  }
+  
+  & > div {
+    width: 200px;
+    height: 100vh;
+  }
+  
+  .fillgap-on-scroll {
+    width: 200px;
+  }
 `;
 
 const SidebarItem = styled.div`
@@ -18,13 +27,10 @@ background: ${props => props.active ? "#ECCFBF" : ""};
 margin: 1px 20px;
 border-radius: 4px;
 
-a {
-  text-decoration: none;
-}
-
 p {
   color: white;
   font-weight: bold;
+  margin: 0;
 }
 
 &:hover {
@@ -42,18 +48,20 @@ function Sidebar(props, { defaultActive }) {
   return(
     <>
       <SidebarParent>
-        {
-          SidebarItems.map((page, index) => {
-            return(
-              <SidebarItem key={page.name} active={index === activeIndex}>
-                <Link to={page.route}>
-                    <p>{page.name}</p>
-                </Link>
-              </SidebarItem>
-            );
-          })
-        }
-
+        <div style={{position: 'fixed'}}>
+          {
+            SidebarItems.map((page, index) => {
+              return(
+                <SidebarItem key={page.name} active={index === activeIndex}>
+                  <Link to={page.route}>
+                      <p>{page.name}</p>
+                  </Link>
+                </SidebarItem>
+              );
+            })
+          }
+        </div>
+        <div className="fillgap-on-scroll"/>
       </SidebarParent>
     </>
   );

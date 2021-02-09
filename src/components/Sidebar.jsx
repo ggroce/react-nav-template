@@ -43,7 +43,23 @@ p {
 `;
 
 function Sidebar(props, { defaultActive }) {
-  const [activeIndex, setActiveIndex] = useState(defaultActive || 1);
+  const location = props.history.location;
+  const lastActiveIndex = Number(localStorage.getItem("lastActiveIndex"));
+  const [activeIndex, setActiveIndex] = useState(lastActiveIndex  || defaultActive);
+
+  function changeActiveIndex(newIndex) {
+    localStorage.setItem("lastActiveIndex", newIndex);
+    setActiveIndex(newIndex);
+  }
+
+  function getRoutePath(path) {
+    (path.charAt(0) === '/') ? path : '/' + path;
+  }
+
+  useEffect(() => {
+    const activePage = SidebarItems.findIndex(page => getRoutePath(page.route) === getRoutePath(location.pathname));
+    changeActiveIndex(activePage);
+  }, [location]);
 
   return(
     <>

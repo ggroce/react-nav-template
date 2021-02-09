@@ -1,18 +1,18 @@
 const SidebarItems = [
   {
-    name: 'Dashboard', 
-    route: '/dashboard', 
+    name: 'Home', 
+    route: '/home', 
   },
   {
-    name: 'Page 1', 
+    name: 'Selection 1', 
     route: '/page1', 
   },
   {
-    name: 'Page 2', 
+    name: 'Selection 2', 
     route: '/page2', 
   },
   {
-    name: 'Page 3', 
+    name: 'Selection 3', 
     route: '/page3', 
   },
 ];

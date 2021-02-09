@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SidebarItems from './SidebarItems';
 
 const SidebarParent = styled.div`
   background: #BBA79C;
-
+  max-width: 200px;
+  
   a {
     text-decoration: none;
   }
@@ -24,7 +25,7 @@ const SidebarItem = styled.div`
 padding: 2px 3px;
 transition: all 0.25s ease-in-out;
 background: ${props => props.active ? "#ECCFBF" : ""};
-margin: 1px 20px;
+margin: 5px 20px;
 border-radius: 4px;
 
 p {
@@ -53,7 +54,7 @@ function Sidebar(props, { defaultActive }) {
   }
 
   function getRoutePath(path) {
-    (path.charAt(0) === '/') ? path : '/' + path;
+    return (path.charAt(0) === '/') ? path : '/' + path;
   }
 
   useEffect(() => {
@@ -62,24 +63,25 @@ function Sidebar(props, { defaultActive }) {
   }, [location]);
 
   return(
-    <>
-      <SidebarParent>
-        <div style={{position: 'fixed'}}>
-          {
-            SidebarItems.map((page, index) => {
-              return(
-                <SidebarItem key={page.name} active={index === activeIndex}>
-                  <Link to={page.route}>
-                      <p>{page.name}</p>
-                  </Link>
-                </SidebarItem>
-              );
-            })
-          }
+    <SidebarParent>
+      <div style={{position: 'fixed'}}>
+        <div style={{height: "100px", marginLeft: "10px"}}>
+          <p>Image goes here?</p>
         </div>
-        <div className="fillgap-on-scroll"/>
-      </SidebarParent>
-    </>
+        {
+          SidebarItems.map((page, index) => {
+            return(
+              <SidebarItem key={page.name} active={index === activeIndex}>
+                <Link to={page.route}>
+                    <p>{page.name}</p>
+                </Link>
+              </SidebarItem>
+            );
+          })
+        }
+      </div>
+      <div className="fillgap-on-scroll"/>
+    </SidebarParent>
   );
 }
 

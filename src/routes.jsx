@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
-import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
 function Routes() {
@@ -13,8 +13,8 @@ function Routes() {
       <Route render={(props) => (
         <Layout {...props}>
           <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/" exact component={Home} />
+            <Route path="/home" exact component={Home} />
             <Route path="/page1" component={Page1} />
             <Route path="/page2" component={Page2} />
             <Route path="/page3" component={Page3} />

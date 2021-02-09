@@ -9,13 +9,11 @@ const SelectedPageParent = styled.div`
 
 function Layout(props) {
   return(
-    <div>
-      <div style={{display: "flex"}}>
-        <Sidebar history={props.history}/>
-        <div style={{flexGrow: "1"}}>
-          <Header />
-            {props.children}
-        </div>
+    <div style={{display: "flex"}}>
+      <Sidebar history={props.history}/>
+      <div style={{flexGrow: "1"}}>
+        <Header />
+        {props.children}
       </div>
     </div>
   )

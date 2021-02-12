@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HeaderParent = styled.div`
-  position: fixed;
-  top: 0;
+const FooterParent = styled.div`
+  bottom: 0;
   width: 100%;
+  padding: .1em;
   color: #FFFFFF;
   background: #402E32;
-  height: 40px;
+  margin: 0;
+  height: 60px;
   z-index: 10;
 `;
 
@@ -19,8 +20,8 @@ const NavLinks = styled.ul`
   margin: 0;
 
   li {
-    padding-top: 5px;
-    padding-left: 20px;
+    padding-left: 30px;
+    padding-top: 20px;
   }
 
   a {
@@ -29,9 +30,10 @@ const NavLinks = styled.ul`
   }
 `;
 
-function Header(props) {
+function Footer(props) {
   return(
-    <HeaderParent>
+    <FooterParent>
+      <footer>
         <nav>
           <NavLinks>
               <li><a href="">List1</a></li>
@@ -40,8 +42,9 @@ function Header(props) {
               <li style={{marginLeft: "auto"}}><a href="">Contacts</a></li>
           </NavLinks>
         </nav>
-    </HeaderParent>
+      </footer>
+    </FooterParent>
   );
 }
 
-export default Header;
+export default Footer;

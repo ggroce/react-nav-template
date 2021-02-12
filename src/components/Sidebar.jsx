@@ -4,21 +4,24 @@ import styled from 'styled-components';
 import SidebarItems from './SidebarItems';
 
 const SidebarParent = styled.div`
+  position: fixed;
+  width: 175px;
+  height: 100vh;
+  max-width: 175px;
   background: #BBA79C;
-  max-width: 200px;
   
   a {
     text-decoration: none;
   }
   
-  & > div {
-    width: 200px;
-    height: 100vh;
-  }
+  // & > div {
+  //   width: 200px;
+  //   height: 100vh;
+  // }
   
-  .fillgap-on-scroll {
-    width: 200px;
-  }
+  // .fillgap-on-scroll {
+  //   width: 200px;
+  // }
 `;
 
 const SidebarItem = styled.div`
@@ -80,7 +83,7 @@ function Sidebar(props, { defaultActive }) {
           })
         }
       </div>
-      <div className="fillgap-on-scroll"/>
+      {/* <div className="fillgap-on-scroll"/> */}
     </SidebarParent>
   );
 }

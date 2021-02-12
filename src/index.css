@@ -1,5 +1,9 @@
-body {
-  margin: 0;
+body, html {
+  margin: auto 0;
+  height: 100%;
+  width: 100%;
+  background-color: #B5CCB8;;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +15,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+

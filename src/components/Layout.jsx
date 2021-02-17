@@ -18,9 +18,9 @@ function Layout(props) {
       <Sidebar history={props.history}/>
 
       <main>
-      <div className="scroll-wrapper">
-          {props.children}
-          </div>
+        <div className="scroll-wrapper">
+            {props.children}
+        </div>
       </main>
       <Footer />
 

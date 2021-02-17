@@ -1,19 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeParent = styled.div`
-  background: #B5CCB8;
-  h1 {
-    margin: auto 0;
-  }
-`;
-
 function Home(props) {
   return(
-    <HomeParent>
-      <h1>Home</h1>
-      <p>Home here, reporting for duty.</p>
-    </HomeParent>
+    <>
+      <div className="child_container">
+        <p>child div container 1</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 2</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 3</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 4</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 1</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 2</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 3</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 4</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 1</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 2</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 3</p>
+      </div>
+      <div className="child_container">
+        <p>child div container 4</p>
+      </div>
+    </>
   );
 }
 

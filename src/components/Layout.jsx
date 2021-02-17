@@ -8,19 +8,22 @@ const SelectedPageParent = styled.div`
   background: #B5CCB8;
   margin-left: 175px;
   margin-top: 50px;
-
-  min-height: calc(100vh - 130px);
+  flex: 1;
 `;
 
 function Layout(props) {
   return(
-    <div style={{display: "flex", flexDirection: "column", height: "100%"}}>
-      <Sidebar history={props.history}/>
+    <div id="parent">
       <Header />
-      <SelectedPageParent>
-        {props.children}
-      </SelectedPageParent>
+      <Sidebar history={props.history}/>
+
+      <main>
+      <div className="scroll-wrapper">
+          {props.children}
+          </div>
+      </main>
       <Footer />
+
     </div>
   )
 }

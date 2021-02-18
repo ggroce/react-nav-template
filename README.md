@@ -1,2 +1,2 @@
 # react-sidebar-starter
-Sidebar nav starter with router
+Handy React responsive clean starter, that includes a sidebar, header, and footer, with react-router-dom.

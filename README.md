@@ -1,2 +1,2 @@
-# react-sidebar-starter
-Handy React responsive clean starter, that includes a sidebar, header, and footer, with a react-router-dom implementation that tracks history.
+# react-nav-template
+React mobile first responsive template, that includes a sidebar, header, and footer, with a react-router-dom navigation implementation that tracks history.

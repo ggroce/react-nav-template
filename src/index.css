@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Ballet&family=Benne&display=swap');
 
 :root {
-  font-size: calc(1em + 1vw);
+  font-size: calc(1em + 0.5vw);
   --header-height: 3em;
-  --footer-height: 5em;
+  --header-border-width: 2px;
+  --footer-height: 7em;
   --content-spacer: 1em;
+  --sidebar-width: 0;
 }
 
 html, body {
@@ -14,44 +16,31 @@ html, body {
   height: 100%;
   display: block;
   position: relative;
-  background-color: #322F1D;
+  background-color: #BADDDA;
   font-family: 'Benne', serif;
-  scroll-behavior: smooth;
   overflow: hidden;
   animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-duration: 1s;
   animation-fill-mode:forwards;
-/*
-  font-size-adjust: none;
-  text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  font-size: calc(1em + 1vw)
-  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
-*/
+  scroll-behavior: smooth;
 }
 
 #parent {
   height: 100%;
   width: 100%;
   background-color: #BADDDA;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 main {
-  margin-top: calc(var(--header-height) + (var(--content-spacer)));
-  margin-bottom: var(--content-spacer);
   margin-left: 0;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--content-spacer) * 2));
-  z-index: 1;
-  overflow-y: auto;
   animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  z-index: 1;
 }
 
 header {
@@ -60,10 +49,10 @@ header {
   height: var(--header-height);
   width: 100%;
   margin-left: 0px;
-  border: #4A4737;
-  border-width: 2px;
+  border: #4a4737;
+  border-width: var(--header-border-width);
   border-style: dashed;
-  background-color: #B0AB99;
+  background-color: #b0ab99;
   overflow: hidden;
   z-index: 5;
 }
@@ -87,7 +76,6 @@ header li {
 }
 
 .push_right {
-  /* margin-left: calc(100vw - 500px); */
   position: absolute;
   right: calc(var(--sidebar-width) + var(--content-spacer) + var(--content-spacer));
 }
@@ -162,10 +150,11 @@ footer {
 .scroll-wrapper {
   display: flex;
   flex-flow: row wrap;
-  align-content: flex-start;
+  align-content: space-between;
   justify-content: center;
-  height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--content-spacer) * 2));
-  overflow-y: auto; 
+  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
 }
 
 .margin-zero {
@@ -212,8 +201,8 @@ footer {
 @media screen and (min-width: 40em) {
   :root {
     --header-height: 2rem;
-    --content-spacer: .5rem;
-    --sidebar-width: 4.5rem;
+    --content-spacer: 0.5rem;
+    --sidebar-width: 5.5rem;
   }
   header {
     margin-left: var(--sidebar-width);
@@ -227,9 +216,11 @@ footer {
   }
   .sidebar {
     display: block;
+    overflow: hidden;
   }
   #sidebar-tablet {
     display: block;
+    
   }
   main {
     min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--content-spacer) * 4));
@@ -239,9 +230,6 @@ footer {
   }
   .scroll-wrapper {
     height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--content-spacer) * 4));
-  }
-  footer {
-    margin-left: var(--sidebar-width);
   }
   .child_container {
     min-height: 4.5em;
